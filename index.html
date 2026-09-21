@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABDUL KHALIQ — Information System Management Student Portfolio</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link Custom Separated Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-obsidian text-slate-200 font-sans selection:bg-maroon selection:text-white cursor-active overflow-x-hidden min-h-screen relative">
+
+    <!-- Custom Cursor DOM Elements (High Z-Index & Pointer-Events None) -->
+    <div id="cursor-dot" class="custom-cursor-dot opacity-0"></div>
+    <div id="cursor-ring" class="custom-cursor-ring opacity-0"></div>
+
+    <!-- Ambient Maroon Radial Glow Orbs -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-maroon-rich rounded-full opacity-30 blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-maroon-deep rounded-full opacity-30 blur-[150px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-40 left-1/4 w-[600px] h-[600px] bg-maroon rounded-full opacity-20 blur-[180px]"></div>
+        <!-- Grid overlay pattern -->
+        <div class="absolute inset-0 bg-noise opacity-80"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo / Monogram -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-maroon-rich to-obsidian border border-maroon-bright/50 flex items-center justify-center font-display font-extrabold text-xl text-white shadow-lg shadow-maroon/20 group-hover:scale-105 transition-all duration-300">
+                    AK
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg text-white tracking-wide block leading-none dynamic-user-name">Abdul Khaliq</span>
+                    <span class="text-xs text-slate-400 font-mono tracking-widest uppercase">Information System Management Student</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="about.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-user-gear text-xs opacity-70"></i> About
+                </a>
+                <a href="skills.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-diagram-project text-xs opacity-70"></i> Skill Tree
+                </a>
+                <a href="projects.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-layer-group text-xs opacity-70"></i> Student Projects
+                </a>
+                <a href="experience.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-timeline text-xs opacity-70"></i> Experience
+                </a>
+            </nav>
+
+            <!-- Action Toolbar Buttons -->
+            <div class="flex items-center gap-3">
+                <!-- Cursor Mode Toggle Button -->
+                <button id="toggle-cursor-btn" onclick="toggleCursorMode()" class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-maroon/40 text-slate-300 text-xs font-mono flex items-center gap-2 hover:bg-maroon-deep/50 hover:border-maroon-bright transition-all" title="Toggle Cursor Style">
+                    <i id="cursor-icon" class="fa-solid fa-hand-pointer text-maroon-vibrant"></i>
+                    <span id="cursor-label" class="hidden sm:inline">Custom Cursor</span>
+                </button>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-obsidian-surface/95 border-b border-maroon/30 px-6 py-4 flex-col gap-4">
+            <a href="about.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-user-gear"></i> About ISM Specialist
+            </a>
+            <a href="skills.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-diagram-project"></i> Skill Tree & Architecture
+            </a>
+            <a href="projects.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-layer-group"></i> Student Projects
+            </a>
+            <a href="experience.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-timeline"></i> Timeline & Experience
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
+                <!-- Left Hero Intro Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Academic Tag Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-maroon-rich/40 border border-maroon-bright/40 text-maroon-vibrant text-xs font-mono font-medium tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-maroon-vibrant animate-ping"></span>
+                        <span class="dynamic-user-status">B.Sc. Information System Management</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="max-w-[760px] font-display text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-white tracking-tight leading-[1.02] break-words">
+                        System Architecture, <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-maroon-vibrant">
+                            Management, Integration
+                        </span> & Data Governance
+                    </h1>
+
+                    <!-- Dynamic Bio Text -->
+                    <p class="text-slate-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl dynamic-user-bio">
+                        Hello! I am <strong class="text-white font-semibold dynamic-user-name">Abdul Khaliq</strong>, an Information System Management student passionate about creating efficient and user-friendly enterprise solutions.
+                    </p>
+
+                    <!-- Interactive Action Buttons -->
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="projects.html" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-maroon to-maroon-bright text-white font-semibold shadow-lg shadow-maroon/30 hover:shadow-maroon/50 hover:scale-[1.02] transition-all flex items-center gap-2">
+                            <span>Explore Systems</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="contact.html" class="px-6 py-3.5 rounded-xl glass-card text-slate-200 hover:text-white hover:border-maroon-bright transition-all flex items-center gap-2" aria-label="Contact Abdul Khaliq">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl glass-card text-slate-300 hover:text-white hover:border-maroon-bright transition-all" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl glass-card text-slate-300 hover:text-white hover:border-maroon-bright transition-all" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl glass-card text-slate-300 hover:text-white hover:border-maroon-bright transition-all" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <!-- Key ISM Metrics Quick Grid -->
+                    <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-maroon/20">
+                        <div>
+                            <p class="font-display text-2xl font-bold text-white">5+</p>
+                            <p class="text-xs text-slate-400 font-mono mt-0.5">Enterprise ERP Audits</p>
+                        </div>
+                        <div>
+                            <p class="font-display text-2xl font-bold text-maroon-vibrant">100%</p>
+                            <p class="text-xs text-slate-400 font-mono mt-0.5">ITIL / ISO Governance</p>
+                        </div>
+                        <div>
+                            <p class="font-display text-2xl font-bold text-white">12+</p>
+                            <p class="text-xs text-slate-400 font-mono mt-0.5">BPMN 2.0 Workflows</p>
+                        </div>
+                         <div>
+                            <p class="font-display text-2xl font-bold text-white">CGPA 3.49</p>
+                            <p class="text-xs text-slate-400 font-mono mt-0.5">Academic Performance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Interactive Visual Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 relative z-10 overflow-hidden border border-maroon-bright/30">
+                        <!-- Card Header Mockup -->
+                        <div class="flex items-center justify-between pb-6 border-b border-maroon/20">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                            </div>
+                            <span class="text-xs font-mono text-maroon-vibrant bg-maroon-rich/30 px-2.5 py-1 rounded border border-maroon/30">system_arch.bpmn</span>
+                        </div>
+
+                        <!-- Past student projects -->
+                        <div class="py-6 space-y-4">
+                            <!-- Process Node 1 -->
+                            <div class="p-3.5 rounded-xl bg-obsidian border border-maroon/40 flex items-center justify-between hover:border-maroon-bright transition-all">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-maroon-rich/60 flex items-center justify-center text-maroon-vibrant font-mono text-sm">01</div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white">Student hub</h4>
+                                        <p class="text-xs text-slate-400">A more centralized platform for student services</p>
+                                    </div>
+                                </div>
+                                <a href="https://nomaximus.github.io/IMS566-ABDUL-KHALIQ-BIN-ABDUL-RAHMAN/" target="_blank" rel="noopener noreferrer" class="text-xs text-maroon-vibrant font-mono hover:text-white transition-colors" aria-label="Open Student Hub project">
+                                    <i class="fa-brands fa-github"></i> Open Project
+                                </a>
+                            </div>
+
+                            <!-- Process Node 2 -->
+                            <div class="p-3.5 rounded-xl bg-obsidian border border-maroon/40 flex items-center justify-between hover:border-maroon-bright transition-all ml-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-maroon-rich/60 flex items-center justify-center text-maroon-vibrant font-mono text-sm">02</div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white">Sport facility booking</h4>
+                                        <p class="text-xs text-slate-400">A system for booking and managing sport facilities</p>
+                                    </div>
+                               </div>
+                                <a href="https://nomaximus.github.io/IMS566-ABDUL-KHALIQ-BIN-ABDUL-RAHMAN/" target="_blank" rel="noopener noreferrer" class="text-xs text-maroon-vibrant font-mono hover:text-white transition-colors" aria-label="Open Student Hub project">
+                                    <i class="fa-brands fa-github"></i> Open Project
+                                </a>
+                            </div>
+
+                            <!-- Process Node 3 -->
+                            <div class="p-3.5 rounded-xl bg-obsidian border border-maroon/40 flex items-center justify-between hover:border-maroon-bright transition-all ml-8">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-maroon-rich/60 flex items-center justify-center text-maroon-vibrant font-mono text-sm">03</div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white">Security & ISO Audit</h4>
+                                        <p class="text-xs text-slate-400">ITIL v4 Governance Matrix</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-maroon-vibrant font-mono"><i class="fa-solid fa-shield-halved"></i> Audited</span>
+                            </div>
+                        </div>
+
+                        <!-- Card Footnote -->
+                        <div class="pt-4 border-t border-maroon/20 flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>Status: Operational</span>
+                            <span class="text-slate-300">Monogram: <strong class="text-maroon-vibrant">AK-ISM-2026</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Decorative Background Card Accent -->
+                    <div class="absolute -bottom-6 -right-6 w-full h-full glass-card rounded-2xl -z-10 bg-maroon-deep/30 border border-maroon/20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-maroon/20 relative z-10 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-maroon-rich flex items-center justify-center font-display font-extrabold text-sm text-white">AK</div>
+                <p class="text-xs text-slate-400 font-mono">© 2026 <span class="dynamic-user-name">Abdul Khaliq</span>. All rights reserved.</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
+                <a href="#hero" class="hover:text-maroon-vibrant">Back to Top</a>
+                <span>|</span>
+                <span class="text-emerald-400"><i class="fa-solid fa-circle text-[8px] mr-1"></i> System Online</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Code Inspector / Splitter Modal (HTML, CSS, JS tabs) -->
+    <div id="code-inspector-modal" class="fixed inset-0 z-[99900] bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card rounded-2xl w-full max-w-4xl max-h-[85vh] flex flex-col border border-maroon-bright/40 shadow-2xl overflow-hidden">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-maroon/30 flex items-center justify-between bg-obsidian-surface">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-code text-maroon-vibrant text-lg"></i>
+                    <div>
+                        <h3 class="font-display text-base font-bold text-white">Portfolio </h3>
+                        <p class="text-[11px] font-mono text-slate-400">View source implementation modules for this web application</p>
+                    </div>
+                </div>
+                <button onclick="closeCodeInspector()" class="text-slate-400 hover:text-white p-2">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Code Tabs -->
+            <div class="px-6 pt-3 bg-obsidian flex items-center justify-between border-b border-maroon/20">
+                <div class="flex items-center gap-2">
+                    <button id="tab-btn-html" onclick="switchCodeTab('html')" class="px-4 py-2 rounded-t-lg text-xs font-mono bg-maroon-rich/60 text-white border-t border-x border-maroon-bright">index.html</button>
+                    <button id="tab-btn-css" onclick="switchCodeTab('css')" class="px-4 py-2 rounded-t-lg text-xs font-mono text-slate-400 hover:text-white">styles.css</button>
+                    <button id="tab-btn-js" onclick="switchCodeTab('js')" class="px-4 py-2 rounded-t-lg text-xs font-mono text-slate-400 hover:text-white">app.js</button>
+                </div>
+                <button id="copy-code-btn" onclick="copyCurrentCodeTab()" class="px-3 py-1 rounded bg-maroon-rich text-xs font-mono text-white border border-maroon-bright/50 hover:bg-maroon transition-all flex items-center gap-1.5 mb-2">
+                    <i class="fa-regular fa-copy"></i> Copy Code Tab
+                </button>
+            </div>
+
+
+    <!-- Customization Studio Sliding Drawer -->
+    <div id="customize-drawer" class="fixed inset-y-0 right-0 z-[99950] w-full max-w-md bg-obsidian-surface border-l border-maroon-bright/40 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 border-b border-maroon/30 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-sliders text-maroon-vibrant"></i>
+                <h3 class="font-display text-lg font-bold text-white">Customization Studio</h3>
+            </div>
+            <button onclick="toggleCustomizeDrawer()" class="text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div class="p-6 overflow-y-auto flex-1 space-y-6">
+            <!-- Cursor Preference Switch -->
+            <div class="p-4 rounded-xl glass-card border border-maroon/30 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h4 class="text-xs font-bold text-white font-mono">Cursor Style Preference</h4>
+                        <p class="text-[11px] text-slate-400">Switch between Custom Glow Dot and Default OS Pointer</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="drawer-cursor-toggle" onchange="toggleCursorMode()" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-obsidian peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-maroon-vibrant"></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Profile Info Editors -->
+            <div class="space-y-4">
+                <h4 class="text-xs font-mono text-maroon-vibrant uppercase">Edit Profile Identity</h4>
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 mb-1">Full Name</label>
+                    <input type="text" id="custom-input-name" value="Abdul Khaliq" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-maroon/30 text-white text-xs focus:outline-none focus:border-maroon-bright">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 mb-1">Academic Status</label>
+                    <input type="text" id="custom-input-status" value="B.Sc. Information System Management Candidate" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-maroon/30 text-white text-xs focus:outline-none focus:border-maroon-bright">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 mb-1">Email Address</label>
+                    <input type="email" id="custom-input-email" value="abdul.khaliq@ism.edu" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-maroon/30 text-white text-xs focus:outline-none focus:border-maroon-bright">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 mb-1">Short Bio</label>
+                    <textarea id="custom-input-bio" rows="3" class="w-full px-3 py-2 rounded-lg bg-obsidian border border-maroon/30 text-white text-xs focus:outline-none focus:border-maroon-bright resize-none">Hello! I am Abdul Khaliq, an Information System Management student specialized in SAP/Odoo ERP integration, HIMS database modeling, BPMN 2.0 workflow optimization, and cloud ITIL compliance.</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-6 border-t border-maroon/30 bg-obsidian flex items-center gap-3">
+            <button onclick="saveCustomizations()" class="flex-1 py-2.5 rounded-xl bg-maroon-vibrant text-white text-xs font-semibold hover:bg-maroon transition-all">
+                Save & Apply Changes
+            </button>
+            <button onclick="resetCustomizations()" class="px-4 py-2.5 rounded-xl border border-maroon/40 text-slate-300 text-xs hover:text-white">
+                Reset
+            </button>
+        </div>
+    </div>
+
+    <!-- Detailed Project Specs Modal -->
+    <div id="project-detail-modal" class="fixed inset-0 z-[99900] bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-maroon-bright/40 shadow-2xl p-6 sm:p-8 space-y-6">
+            <div class="flex items-start justify-between border-b border-maroon/30 pb-4">
+                <div>
+                    <span id="modal-project-badge" class="text-[10px] font-mono text-maroon-vibrant bg-maroon-rich/40 px-2.5 py-1 rounded border border-maroon/30 uppercase">SYSTEM ARCHITECTURE</span>
+                    <h3 id="modal-project-title" class="font-display text-2xl font-bold text-white mt-2">Project Name</h3>
+                </div>
+                <button onclick="closeProjectModal()" class="text-slate-400 hover:text-white p-2">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
+                <div>
+                    <h4 class="font-mono text-white text-sm font-semibold mb-1">Executive Summary</h4>
+                    <p id="modal-project-summary">Project summary description placeholder...</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-obsidian border border-maroon/30 space-y-2">
+                    <h4 class="font-mono text-maroon-vibrant text-xs font-semibold">Technical Architecture Highlights</h4>
+                    <ul id="modal-project-highlights" class="list-disc list-inside space-y-1 text-slate-300">
+                        <li>High-throughput database schema design</li>
+                        <li>Automated BPMN 2.0 trigger engine</li>
+                        <li>ITIL v4 Governance compliance</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-mono text-white text-xs font-semibold mb-2">Technologies Used</h4>
+                    <div id="modal-project-tags" class="flex flex-wrap gap-2">
+                        <!-- Tech Badges Inserted Dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-maroon/30 flex justify-end">
+                <button onclick="closeProjectModal()" class="px-5 py-2 rounded-xl bg-maroon-rich text-white font-semibold text-xs border border-maroon-bright hover:bg-maroon transition-all">
+                    Close Inspector
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Message Alert Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-[99999] space-y-3 pointer-events-none"></div>
+
+    <!-- Link Custom Separated Script -->
+    <script src="script.js"></script>
+</body>
+</html>

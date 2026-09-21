@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Abdul Khaliq</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-obsidian text-slate-200 font-sans selection:bg-maroon selection:text-white cursor-active overflow-x-hidden min-h-screen relative">
+    <div id="cursor-dot" class="custom-cursor-dot opacity-0"></div>
+    <div id="cursor-ring" class="custom-cursor-ring opacity-0"></div>
+
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-maroon-rich rounded-full opacity-30 blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-maroon-deep rounded-full opacity-30 blur-[150px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-40 left-1/4 w-[600px] h-[600px] bg-maroon rounded-full opacity-20 blur-[180px]"></div>
+        <div class="absolute inset-0 bg-noise opacity-80"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-maroon-rich to-obsidian border border-maroon-bright/50 flex items-center justify-center font-display font-extrabold text-xl text-white shadow-lg shadow-maroon/20 group-hover:scale-105 transition-all duration-300">
+                    AK
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg text-white tracking-wide block leading-none dynamic-user-name">Abdul Khaliq</span>
+                    <span class="text-xs text-slate-400 font-mono tracking-widest uppercase">ISM Enterprise Spec</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="about.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-user-gear text-xs opacity-70"></i> About
+                </a>
+                <a href="skills.html" class="text-sm font-medium text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-diagram-project text-xs opacity-70"></i> Skill Tree
+                </a>
+                <a href="projects.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-layer-group text-xs opacity-70"></i> ISM Systems
+                </a>
+                <a href="experience.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-timeline text-xs opacity-70"></i> Experience
+                </a>
+                <a href="contact.html" class="text-sm font-medium text-slate-300 hover:text-maroon-vibrant transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-paper-plane text-xs opacity-70"></i> Contact
+                </a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button id="toggle-cursor-btn" onclick="toggleCursorMode()" class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-maroon/40 text-slate-300 text-xs font-mono flex items-center gap-2 hover:bg-maroon-deep/50 hover:border-maroon-bright transition-all" title="Toggle Cursor Style">
+                    <i id="cursor-icon" class="fa-solid fa-hand-pointer text-maroon-vibrant"></i>
+                    <span id="cursor-label" class="hidden sm:inline">Custom Cursor</span>
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg border border-maroon/40 text-slate-300">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-obsidian-surface/95 border-b border-maroon/30 px-6 py-4 flex-col gap-4">
+            <a href="about.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-user-gear"></i> About ISM Specialist
+            </a>
+            <a href="skills.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-diagram-project"></i> Skill Tree & Architecture
+            </a>
+            <a href="projects.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-layer-group"></i> ISM Projects
+            </a>
+            <a href="experience.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3 border-b border-white/5">
+                <i class="fa-solid fa-timeline"></i> Timeline & Experience
+            </a>
+            <a href="contact.html" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-maroon-vibrant py-2 flex items-center gap-3">
+                <i class="fa-solid fa-paper-plane"></i> Get In Touch
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-32 pb-16">
+        <section id="skills" class="py-20 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-mono text-maroon-vibrant uppercase tracking-widest bg-maroon-rich/30 px-3 py-1 rounded-full border border-maroon/30">Technical Competencies</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-3">Information System Skill Tree</h2>
+                    <p class="text-slate-400 text-sm mt-2">Comprehensive breakdown of enterprise systems engineering, database design, governance, and analytics tools.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-maroon-rich/50 border border-maroon-bright/40 flex items-center justify-center text-maroon-vibrant text-xl mb-4">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">ERP Architecture & BPMN</h3>
+                        <p class="text-xs text-slate-400 mb-4">Modeling business processes, SAP module mapping, Odoo ERP customization, and Camunda BPMN 2.0 execution.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">SAP S/4HANA</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Odoo v16</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Camunda</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">BPMN 2.0</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-maroon-rich/50 border border-maroon-bright/40 flex items-center justify-center text-maroon-vibrant text-xl mb-4">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">Database & EHR Engineering</h3>
+                        <p class="text-xs text-slate-400 mb-4">Normalizing relational schemas, PostgreSQL query optimization, HIMS healthcare data flow design, and indexing.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">PostgreSQL</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">MySQL</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Redis Cache</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">ERD Modeling</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-maroon-rich/50 border border-maroon-bright/40 flex items-center justify-center text-maroon-vibrant text-xl mb-4">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">IT Governance & ISO Compliance</h3>
+                        <p class="text-xs text-slate-400 mb-4">Implementing ITIL v4 frameworks, ISO 27001 risk matrix evaluations, COBIT audits, and disaster recovery planning.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">ITIL v4</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">ISO 27001</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">COBIT 2019</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">AWS IAM</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-maroon-rich/50 border border-maroon-bright/40 flex items-center justify-center text-maroon-vibrant text-xl mb-4">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">BI & Executive Dashboarding</h3>
+                        <p class="text-xs text-slate-400 mb-4">Power BI dashboard design, SQL aggregations, Python pandas data pipelines, and KPI tracking dashboards.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Power BI</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">SQL</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Python</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">KPI Metrics</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-maroon-rich/50 border border-maroon-bright/40 flex items-center justify-center text-maroon-vibrant text-xl mb-4">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">Systems Analysis & Agile Lead</h3>
+                        <p class="text-xs text-slate-400 mb-4">Functional requirement specification (FRS), Use Case modeling, Jira Agile sprint moderation, and stakeholder alignment.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">FRS</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">UML</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Agile</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Jira</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-maroon-rich/50 border border-maroon-bright/40 flex items-center justify-center text-maroon-vibrant text-xl mb-4">
+                            <i class="fa-solid fa-plug"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-white mb-2">RESTful Integration & Middleware</h3>
+                        <p class="text-xs text-slate-400 mb-4">Designing JSON API payloads, Webhook triggers, Postman testing, and microservice enterprise connectivity.</p>
+                        <div class="flex flex-wrap gap-2 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">REST API</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">JSON</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Postman</span>
+                            <span class="px-2.5 py-1 rounded bg-obsidian border border-maroon/30 text-slate-300">Webhooks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-10 border-t border-maroon/20 relative z-10 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-maroon-rich flex items-center justify-center font-display font-extrabold text-sm text-white">AK</div>
+                <p class="text-xs text-slate-400 font-mono">Â© 2026 <span class="dynamic-user-name">Abdul Khaliq</span>. All rights reserved.</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
+                <a href="index.html" class="hover:text-maroon-vibrant">Back to Home</a>
+                <span>|</span>
+                <span class="text-emerald-400"><i class="fa-solid fa-circle text-[8px] mr-1"></i> System Online</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="fixed bottom-6 right-6 z-[99999] space-y-3 pointer-events-none"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
