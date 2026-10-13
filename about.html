@@ -31,7 +31,7 @@
                 </div>
                 <div>
                     <span class="font-display font-bold text-lg text-white tracking-wide block leading-none dynamic-user-name">Abdul Khaliq</span>
-                    <span class="text-xs text-slate-400 font-mono tracking-widest uppercase">ISM Enterprise Spec</span>
+                    <span class="text-xs text-slate-400 font-mono tracking-widest uppercase">ISM Student Portfolio</span>
                 </div>
             </a>
 
@@ -121,6 +121,36 @@
             </div>
         </section>
 
+        <section class="py-10 border-y border-maroon/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-6">
+                    <div>
+                        <p class="text-xs font-mono uppercase tracking-[0.25em] text-maroon-vibrant">At a glance</p>
+                        <h2 class="font-display text-2xl font-bold text-white mt-2">The work in numbers.</h2>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-sm">A quick view of the projects, workflows, governance, and academic progress behind the practice.</p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div>
+                        <p class="font-display text-2xl font-bold text-white">2+</p>
+                        <p class="text-xs text-slate-400 font-mono mt-0.5">Mini Projects</p>
+                    </div>
+                    <div>
+                        <p class="font-display text-2xl font-bold text-maroon-vibrant">100%</p>
+                        <p class="text-xs text-slate-400 font-mono mt-0.5">ITIL / ISO Governance</p>
+                    </div>
+                    <div>
+                        <p class="font-display text-2xl font-bold text-white">12+</p>
+                        <p class="text-xs text-slate-400 font-mono mt-0.5">BPMN 2.0 Workflows</p>
+                    </div>
+                    <div>
+                        <p class="font-display text-2xl font-bold text-white">CGPA 3.47</p>
+                        <p class="text-xs text-slate-400 font-mono mt-0.5">Academic Performance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="py-16 border-y border-maroon/20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
@@ -129,7 +159,7 @@
                     </div>
                     <div class="md:col-span-8 space-y-5 text-slate-300 leading-relaxed font-light text-lg">
                         <h2 class="font-display text-3xl font-bold text-white">Curiosity became a method.</h2>
-                        <p>I became interested in Information Systems because every organization has a hidden architecture: the handoffs, rules, records, and decisions that quietly determine whether work moves forward.</p>
+                        <p>I became interested in Information Systems Management because every organization has a hidden architecture: the handoffs, rules, records, and decisions that quietly determine whether work moves forward.</p>
                         <p>My work starts by making that architecture visible. I map the process, question the friction, and shape a system that people can actually use when the pressure is real.</p>
                     </div>
                 </div>
@@ -147,10 +177,10 @@
                     <div class="lg:col-span-7 space-y-5">
                         <article class="glass-card rounded-2xl p-7 border border-maroon/30">
                             <div class="flex items-start justify-between gap-4">
-                                <h3 class="font-display text-2xl font-bold text-white">Enterprise systems</h3>
+                                <h3 class="font-display text-2xl font-bold text-white">Modern approach</h3>
                                 <i class="fa-solid fa-sitemap text-maroon-vibrant text-xl"></i>
                             </div>
-                            <p class="text-slate-400 leading-relaxed mt-4">SAP S/4HANA, Odoo ERP modules, and BPMN workflow automation become useful when they connect operations instead of adding another isolated tool.</p>
+                            <p class="text-slate-400 leading-relaxed mt-4">I like to focus on creating a cohesive and user-friendly system that focus on the user needs and also ensures seamless integration across different platforms with the usage of modern approach such as 'Cloud Storage'.</p>
                         </article>
                         <article class="glass-card rounded-2xl p-7 border border-maroon/30">
                             <div class="flex items-start justify-between gap-4">
@@ -180,15 +210,31 @@
                     </div>
                     <p class="text-sm text-slate-400 max-w-sm">Keep these spaces for project photography, diagrams, campus life, or anything that gives the story a little texture.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    <div class="min-h-[280px] rounded-2xl border border-dashed border-maroon-bright/50 bg-maroon-rich/10 flex items-center justify-center text-center p-6">
-                        <span class="text-xs font-mono uppercase tracking-widest text-maroon-vibrant">Image slot / 01</span>
+                <div class="project-carousel" aria-label="Project pictures">
+                    <div id="project-carousel-track" class="project-carousel-track" tabindex="0" aria-label="Project pictures; scroll horizontally to browse">
+                        <div class="project-carousel-slide">
+                            <img src="Img/Project1.png" alt="Student Hub project" class="project-image" onclick="openImageViewer(this)" tabindex="0" role="button" aria-label="View Student Hub project image full size">
+                        </div>
+                        <div class="project-carousel-slide">
+                            <img src="Img/Project2.png" alt="Project interface" class="project-image" onclick="openImageViewer(this)" tabindex="0" role="button" aria-label="View project image full size">
+                        </div>
+                        <div class="project-carousel-slide">
+                            <img src="Img/Project3.png" alt="Project interface" class="project-image" onclick="openImageViewer(this)" tabindex="0" role="button" aria-label="View project image full size">
+                        </div>
                     </div>
-                    <div class="min-h-[280px] rounded-2xl border border-dashed border-maroon-bright/50 bg-maroon-rich/10 flex items-center justify-center text-center p-6">
-                        <span class="text-xs font-mono uppercase tracking-widest text-maroon-vibrant">Image slot / 02</span>
-                    </div>
-                    <div class="min-h-[280px] rounded-2xl border border-dashed border-maroon-bright/50 bg-maroon-rich/10 flex items-center justify-center text-center p-6">
-                        <span class="text-xs font-mono uppercase tracking-widest text-maroon-vibrant">Image slot / 03</span>
+                    <button type="button" class="project-carousel-arrow project-carousel-previous" onclick="moveProjectCarousel(-1)" aria-label="Previous project picture">
+                        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="project-carousel-arrow project-carousel-next" onclick="moveProjectCarousel(1)" aria-label="Next project picture">
+                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                    <div class="project-carousel-footer">
+                        <div class="project-carousel-dots" aria-label="Choose project picture">
+                            <button type="button" class="project-carousel-dot is-active" onclick="goToProjectSlide(0)" aria-label="Show picture 1" aria-current="true"></button>
+                            <button type="button" class="project-carousel-dot" onclick="goToProjectSlide(1)" aria-label="Show picture 2"></button>
+                            <button type="button" class="project-carousel-dot" onclick="goToProjectSlide(2)" aria-label="Show picture 3"></button>
+                        </div>
+                        <span id="project-carousel-count" class="project-carousel-count" aria-live="polite">01 / 02</span>
                     </div>
                 </div>
             </div>
@@ -205,12 +251,19 @@
                 </div>
                 <div class="divide-y divide-maroon/20">
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 py-7">
-                        <p class="md:col-span-3 text-xs font-mono text-maroon-vibrant">2024 - PRESENT</p>
-                        <div class="md:col-span-6"><h3 class="font-display text-xl font-bold text-white">Information System Management</h3><p class="text-slate-400 mt-2">Enterprise architecture, database modeling, and governance research.</p></div>
-                        <p class="md:col-span-3 md:text-right text-xs text-slate-500 font-mono">ISM STUDIES</p>
+                        <p class="md:col-span-3 text-xs font-mono text-maroon-vibrant">2023 - 2024</p>
+                        <div class="md:col-span-6"><h3 class="font-display text-xl font-bold text-white">Diploma in Information Management</h3>
+                        <p class="text-slate-400 mt-2">The Diploma in Information Management is designed to produce professionals who are conversant in the delivery of knowledge services in organisations and have the skills to manage information in a digitised format.</p></div>
+                        <p class="md:col-span-3 md:text-right text-xs text-slate-500 font-mono">UiTM Cawangan Sarawak</p>
+                        <p class="md:col-span-3 md:text-right text-xs text-slate-500 font-mono">CGPA: 3.25</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 py-7">
-                        <p class="md:col-span-3 text-xs font-mono text-maroon-vibrant">ONGOING</p>
+                        <p class="md:col-span-3 text-xs font-mono text-maroon-vibrant">2022 - 2023</p>
+                        <div class="md:col-span-6"><h3 class="font-display text-xl font-bold text-white">Student Hub Project</h3><p class="text-slate-400 mt-2">A web-based platform for students to access academic resources and support services.</p></div>
+                        <p class="md:col-span-3 md:text-right text-xs text-slate-500 font-mono">ACADEMIC PROJECT</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 py-7">
+                        <p class="md:col-span-3 text-xs font-mono text-maroon-vibrant">2023 - 2024</p>
                         <div class="md:col-span-6"><h3 class="font-display text-xl font-bold text-white">Independent Systems Practice</h3><p class="text-slate-400 mt-2">Building prototypes that turn operational problems into visible, testable workflows.</p></div>
                         <p class="md:col-span-3 md:text-right text-xs text-slate-500 font-mono">PORTFOLIO LAB</p>
                     </div>
@@ -238,7 +291,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-lg bg-maroon-rich flex items-center justify-center font-display font-extrabold text-sm text-white">AK</div>
-                <p class="text-xs text-slate-400 font-mono">Â© 2026 <span class="dynamic-user-name">Abdul Khaliq</span>. All rights reserved.</p>
+                <p class="text-xs text-slate-400 font-mono">&copy; 2026 <span class="dynamic-user-name">Abdul Khaliq</span>. All rights reserved.</p>
             </div>
             <div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
                 <span class="text-emerald-400"><i class="fa-solid fa-circle text-[8px] mr-1"></i> System Online</span>
